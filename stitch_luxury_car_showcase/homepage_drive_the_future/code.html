@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#004f58",
+                      "secondary-fixed": "#e0e0ff",
+                      "primary-fixed-dim": "#006875",
+                      "secondary": "#bdc2ff",
+                      "primary-fixed": "#9cf0ff",
+                      "surface-container-lowest": "#0e0e0e",
+                      "primary": "#00daf3",
+                      "primary-container": "#001f24",
+                      "on-error": "#690005",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed": "#c7f300",
+                      "on-surface": "#e5e2e1",
+                      "on-primary": "#00363d",
+                      "surface-bright": "#3a3939",
+                      "on-tertiary-fixed": "#171e00",
+                      "inverse-surface": "#e5e2e1",
+                      "inverse-primary": "#006875",
+                      "on-tertiary-fixed-variant": "#3d4d00",
+                      "secondary-container": "#343d96",
+                      "on-secondary-container": "#a8afff",
+                      "on-tertiary": "#293500",
+                      "surface": "#131313",
+                      "outline": "#8e9099",
+                      "outline-variant": "#44474e",
+                      "on-surface-variant": "#c4c6cf",
+                      "error-container": "#93000a",
+                      "background": "#131313",
+                      "surface-container-highest": "#353534",
+                      "error": "#ffb4ab",
+                      "surface-container": "#201f1f",
+                      "surface-container-low": "#1c1b1b",
+                      "surface-dim": "#131313",
+                      "on-secondary": "#1b247f",
+                      "on-secondary-fixed": "#000767",
+                      "on-secondary-fixed-variant": "#343d96",
+                      "tertiary": "#aed500",
+                      "tertiary-fixed-dim": "#aed500",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-tint": "#00daf3",
+                      "on-background": "#e5e2e1",
+                      "secondary-fixed-dim": "#bdc2ff",
+                      "on-primary-fixed": "#001f24",
+                      "inverse-on-surface": "#313030",
+                      "tertiary-container": "#171e00",
+                      "on-primary-container": "#0091a2",
+                      "on-tertiary-container": "#738e00",
+                      "surface-variant": "#353534"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(28, 27, 27, 0.6);
+            backdrop-filter: blur(12px);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 218, 243, 0.3);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-10 py-6">
+<div class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline">VELOCITY</div>
+<div class="hidden md:flex items-center space-x-8 font-headline tracking-tight">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#">Home</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Cars</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Categories</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">About</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-all">search</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer transition-all">person</span>
+<button class="hidden lg:block bg-gradient-to-r from-primary to-on-primary-container text-on-primary px-6 py-2 rounded-sm font-bold text-sm hover:scale-95 active:duration-75 transition-all">
+                    Test Drive
+                </button>
+</div>
+</div>
+</nav>
+<main>
+<section class="relative h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="Sleek electric sports car in a high-tech dark showroom with neon cyan lighting reflecting on its polished black body" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAksygwCXgm58tEgSX4r6yYzmrqQkWmMmlvXQkOvTDe3mmDN5u_fX2eIHuXolm7J0xCznhU4VZA1gqxSRuaiw1wTpPJNxX77YLXDO9WJI69SfJQmgCDm9nz01z6onuj5MwzLc5QAt53x47utygIYIRl4CEmVIXic327eIJorYV5c9yzS7VC3jdx0cprRORiXFePot__Qq4u6a16HW95R0D5kJq5naiQLn4K8g4Z-91b7cT0hplTJ49CFkbXTQ7_Zfuc86b9lMBtqq8"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-screen-2xl mx-auto px-10 w-full">
+<div class="max-w-3xl space-y-6">
+<span class="text-tertiary font-label tracking-[0.3em] uppercase text-xs font-bold">Futuristic Engineering</span>
+<h1 class="text-7xl md:text-9xl font-headline font-bold leading-[0.9] tracking-tighter text-on-surface">
+                        Drive the <br/><span class="text-primary italic">Future</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-xl">
+                        Explore Latest Cars of 2025. Unmatched performance meets digital intelligence in our newest fleet of luxury athletes.
+                    </p>
+<div class="pt-8 flex items-center space-x-6">
+<button class="bg-gradient-to-r from-primary to-on-primary-container text-on-primary px-10 py-4 rounded-sm font-black tracking-widest uppercase hover:scale-105 transition-transform">
+                            Explore Now
+                        </button>
+<button class="flex items-center space-x-3 text-on-surface hover:text-primary group transition-colors">
+<span class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center group-hover:border-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</span>
+<span class="font-bold tracking-widest uppercase text-xs">Watch Reveal</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 bg-background">
+<div class="max-w-screen-2xl mx-auto px-10">
+<div class="flex justify-between items-end mb-20">
+<div class="space-y-2">
+<h2 class="text-4xl font-headline font-bold tracking-tight">Featured <span class="text-primary">Performance</span></h2>
+<div class="w-24 h-1 bg-primary"></div>
+</div>
+<a class="text-primary font-label uppercase text-sm tracking-widest border-b border-primary/20 hover:border-primary transition-colors pb-1" href="#">View All Models</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<div class="group relative surface-container-low rounded-xl overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Rear view of a classic luxury sports car on a scenic mountain road at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdiNXpqDwmXxL2GXbxUScs7fZBf8C6hL3C62h6LMgEuSkv9oREu7H6pMkqMeCOqdTK6xtQnwqTcMWcNv2oEH_JbO1GfA6jFuNNCdYHbgwKKdgrCAZGYJfnAe5-nJHhKv8CYiMJy90h3QxPYiyxIYEPgRMGgfod98ANowNx_KNpH-dEfzYY9eY9SfFcdlA4Ubfl9NDha8eGUHT0BqjEswC9K4MH465gNKGvdUOFj4IUKDTvSFP3knHeKXkXi7Vg52JM5JdTb93T8yQ"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-bold">Apex GT-S</h3>
+<p class="text-on-surface-variant text-sm">Hyper-Electric</p>
+</div>
+<p class="text-primary font-headline text-xl font-bold">$185,000</p>
+</div>
+<div class="flex space-x-4 text-xs font-label text-on-surface-variant uppercase tracking-wider">
+<span>850 HP</span>
+<span>•</span>
+<span>1.9s (0-60)</span>
+</div>
+<button class="w-full py-4 border border-outline-variant text-on-surface font-bold uppercase tracking-widest text-xs hover:bg-on-surface hover:text-surface transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+<div class="group relative surface-container-low rounded-xl overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Side profile of a modern silver luxury sedan in an urban industrial environment with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD188C7GFCaog3sTNio-EifZVynjfK0rXC_4R9XO-6W7mnFKjIn5LM2kpexvExUuOULmWcJ4tHer2N-MnU1V-cLvJK9llMA-ctxHygeuthpDg5emrQS060BrvHDz2IErip6Ac_EaO5t2vsAhP_y7JAyfDfiR7WP-AwwtzGvIZ5kJ1TZBGeborPM7hSLVv9MTv0ytmCmPT6RMsd-9UbQ7vhyrPx6PozZLZiPBR_rfJcE8miRqWCcc8WClJ8I4ejCpeTp7TAdEUKLdKI"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-bold">Velos Executive</h3>
+<p class="text-on-surface-variant text-sm">Twin-Turbo Hybrid</p>
+</div>
+<p class="text-primary font-headline text-xl font-bold">$124,500</p>
+</div>
+<div class="flex space-x-4 text-xs font-label text-on-surface-variant uppercase tracking-wider">
+<span>560 HP</span>
+<span>•</span>
+<span>3.4s (0-60)</span>
+</div>
+<button class="w-full py-4 border border-outline-variant text-on-surface font-bold uppercase tracking-widest text-xs hover:bg-on-surface hover:text-surface transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+<div class="group relative surface-container-low rounded-xl overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500">
+<div class="aspect-[4/3] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Front view of a white sports SUV parked in a minimalist architecture driveway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnMk6wsk6XTBEky4ABz2ipbGz1Ws-5Kv1XdZ9uZ0GYWSeyr4rj0MnQOtNW7XYQZAAq8n-GnKmP3JUSkblroGvydtBREN3PET5gz_6lyfjxe6959UQEJR97ChpCCOf0QxZyO78fR4rNaIoiZe2ENoFOS3gaDZwTNhYLHlN6ayL0ZGjUIkB6qA7EckzFX9JMIWNToDTyVr0dNOoSy6irfdaPZbaUXxKW7sjbEv3Gx8VRUvkQuyrqrVaqPPY1LSRo9yPslQcVPVnxlyQ"/>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-headline font-bold">Horizon X</h3>
+<p class="text-on-surface-variant text-sm">All-Terrain Performance</p>
+</div>
+<p class="text-primary font-headline text-xl font-bold">$142,000</p>
+</div>
+<div class="flex space-x-4 text-xs font-label text-on-surface-variant uppercase tracking-wider">
+<span>620 HP</span>
+<span>•</span>
+<span>3.8s (0-60)</span>
+</div>
+<button class="w-full py-4 border border-outline-variant text-on-surface font-bold uppercase tracking-widest text-xs hover:bg-on-surface hover:text-surface transition-colors">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 surface-container-lowest">
+<div class="max-w-screen-2xl mx-auto px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="group glass-card p-10 rounded-xl flex flex-col items-center text-center space-y-6 hover:bg-surface-container-high transition-all cursor-pointer neon-glow">
+<span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">sports_motorsports</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Sports Cars</h4>
+<p class="text-xs text-zinc-500 uppercase tracking-widest">Unleashed Power</p>
+</div>
+</div>
+<div class="group glass-card p-10 rounded-xl flex flex-col items-center text-center space-y-6 hover:bg-surface-container-high transition-all cursor-pointer neon-glow">
+<span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">electric_car</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Electric</h4>
+<p class="text-xs text-zinc-500 uppercase tracking-widest">Zero Emissions</p>
+</div>
+</div>
+<div class="group glass-card p-10 rounded-xl flex flex-col items-center text-center space-y-6 hover:bg-surface-container-high transition-all cursor-pointer neon-glow">
+<span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">minor_crash</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">SUVs</h4>
+<p class="text-xs text-zinc-500 uppercase tracking-widest">Versatile Luxury</p>
+</div>
+</div>
+<div class="group glass-card p-10 rounded-xl flex flex-col items-center text-center space-y-6 hover:bg-surface-container-high transition-all cursor-pointer neon-glow">
+<span class="material-symbols-outlined text-5xl text-primary" data-weight="fill">airport_shuttle</span>
+<div>
+<h4 class="font-headline font-bold text-xl mb-2">Sedans</h4>
+<p class="text-xs text-zinc-500 uppercase tracking-widest">Executive Style</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 overflow-hidden bg-background">
+<div class="max-w-screen-2xl mx-auto px-10 mb-12">
+<h2 class="text-4xl font-headline font-bold tracking-tight">Trending <span class="text-tertiary">Highlights</span></h2>
+</div>
+<div class="flex overflow-x-auto space-x-10 px-10 hide-scrollbar pb-10">
+<div class="flex-none w-[600px] h-[400px] relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="Vibrant red supercar driving through a neon-lit tunnel at night with motion blur on the walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Jh1GhNPrrRtgqcDEpNbGO-rdEK7wR1V3G38e81GcbnoxRBMFxoW2rbg_JMMqOCCcKe2Zadko_aIw9o3DXkeaTp_vws3J4bpWgbpGeXtRPIh0GW_5Lslp0nfEuEx2iVWZfpdol6oo9nuVOteFhq2_fBVM-VlqCxLYt4ePMOhbhwrOWsqbhwxwTInB7BIXw6U1XNyjq5TFSpjHgq9yoHcxTLmI3EZRlPEWYBeK2uQTRkxjvrP2R_a43iXQhmyDGNCFamZnYspI2RU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent p-10 flex flex-col justify-end">
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest mb-2">Trending Now</span>
+<h4 class="text-3xl font-headline font-bold">Midnight Run: GT Limited Edition</h4>
+</div>
+</div>
+<div class="flex-none w-[600px] h-[400px] relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="Interior cockpit of a high-end luxury car featuring carbon fiber details and digital instrumentation glowing in neon blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz0PadzlVpkLIK_Ly61L73S607H0kcyqKpn34xjkDdOORQR6s-z2AVfRN1SnvAzJKmgLnprN4cYeS6M0KsFkI4kh2TOFzglBB7fDaaqQ0TsqUsowiCjBXNgYKuWRCyKceAqBUxtiObvoRIIPGaAz12027EAKGd9iNgXbtT9UdWsoyVrJJbf-Hc5Vwar6iSRS9L0Q8C4iFPLXwQ-HnZ5soQKio3Egn2c8UY2-rxITG7_-FDM4-ulAHF7U2zPAy8awSg553EyO2Feoo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent p-10 flex flex-col justify-end">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2">Tech Focus</span>
+<h4 class="text-3xl font-headline font-bold">Neuro-Drive Cockpit Interface</h4>
+</div>
+</div>
+<div class="flex-none w-[600px] h-[400px] relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="Front headlights of a sleek black car with intricate LED signatures glowing in a dark setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeuc8xOUhhj9xMiuyv_9s4Kz2245nyFI5cQ_ZgdKo6_qrfKRzAs4IY2wcG6jsuR7lyiBVAePofBxjGW7Xb782s7YD6anBYgEwFx2hMP2wFwF0miDnTltH2oU-PUC6xgub11QDMVqpu9pN2v0zEGpYiFvdzFN4zadVtvJpuBL39ktolY_r4PyNT_FgLkcTqaqWMn9dxQBmq4GWovfdi7eGdZtC5QYjdRmNZyCXUF5zT75d_Kto0xgpN4rFQTeo1e1aSPrIj5gkq-Qc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent p-10 flex flex-col justify-end">
+<span class="text-on-surface-variant text-xs font-bold uppercase tracking-widest mb-2">Sustainability</span>
+<h4 class="text-3xl font-headline font-bold">Hydrogen-Cell Core Concept</h4>
+</div>
+</div>
+</div>
+</section>
+<section class="py-40 bg-zinc-950">
+<div class="max-w-screen-2xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-container-low rounded-sm overflow-hidden relative z-10">
+<img class="w-full h-full object-cover" data-alt="High-performance car engine close-up with polished chrome and red accents, illuminated by industrial studio lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEjttZwC-MahBUZQYDKF81QSJa435avkAxgT-HygWLQw-Aot8Cqwuj4MAB0fzj9hiz13sc4payi5HVZiDUbX8SpLs1XdPBkz48DL3u7cDu_NPZN_B6oI8f6ui2P3zW6shqzz7C1-KpbUtm27x0fCGzbMJ6q7KT21Ql9plIDbx7Y-WZ4FEaJvC4KZPi6M0O7t4iz9U1Kq7qR534UaDM-v9_idl3grknwfwe_eaqmZ4hi8yZUAIofEjOx6JOl6ZINhWcwISQ0__5t-A"/>
+</div>
+<div class="absolute -bottom-10 -right-10 w-2/3 aspect-square border-2 border-primary/20 -z-0"></div>
+</div>
+<div class="space-y-8">
+<h2 class="text-5xl font-headline font-bold leading-tight">Engineered for the <span class="text-primary">Extraordinary</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        At VELOCITY, we don't just build cars; we sculpt the future of movement. Every curve is an ode to aerodynamics, and every engine note is a symphony of precision engineering.
+                    </p>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Founded in 2018, our mission was simple: to merge high-fashion aesthetics with aerospace performance. Today, we stand at the pinnacle of automotive excellence, delivering experiences that defy physics and ignite the soul.
+                    </p>
+<div class="grid grid-cols-2 gap-10 pt-6">
+<div>
+<p class="text-3xl font-headline font-bold text-primary">12</p>
+<p class="text-xs uppercase tracking-widest text-zinc-500 font-bold">Global Patents</p>
+</div>
+<div>
+<p class="text-3xl font-headline font-bold text-primary">0.19</p>
+<p class="text-xs uppercase tracking-widest text-zinc-500 font-bold">Drag Coefficient</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-40 bg-background relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-0"></div>
+<div class="max-w-4xl mx-auto px-10 relative z-10">
+<div class="glass-card p-16 rounded-xl border border-outline-variant/30">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-headline font-bold mb-4">Connect With <span class="text-primary">Excellence</span></h2>
+<p class="text-on-surface-variant">Schedule a private viewing or speak with a specialist.</p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-on-surface placeholder:text-zinc-600 transition-colors peer" id="name" placeholder=" " type="text"/>
+<label class="absolute left-0 top-3 text-zinc-600 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="name">Full Name</label>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-on-surface placeholder:text-zinc-600 transition-colors peer" id="email" placeholder=" " type="email"/>
+<label class="absolute left-0 top-3 text-zinc-600 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="email">Email Address</label>
+</div>
+</div>
+<div class="relative">
+<textarea class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-on-surface placeholder:text-zinc-600 transition-colors peer" id="message" placeholder=" " rows="4"></textarea>
+<label class="absolute left-0 top-3 text-zinc-600 pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-xs peer-focus:text-primary peer-[:not(:placeholder-shown)]:-top-4 peer-[:not(:placeholder-shown)]:text-xs" for="message">Your Message</label>
+</div>
+<button class="w-full bg-on-surface text-surface py-5 font-black uppercase tracking-widest text-sm hover:bg-primary transition-colors hover:text-on-primary">
+                            Inquire Now
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-zinc-950 w-full py-20 px-10 border-t border-zinc-800/50">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 font-['Manrope'] text-sm tracking-wide uppercase">
+<div class="space-y-6">
+<div class="text-xl font-black text-zinc-100">VELOCITY</div>
+<p class="text-zinc-500 normal-case tracking-normal">Leading the automotive revolution with sustainable performance and visionary design.</p>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-zinc-400 hover:text-primary cursor-pointer">mail</span>
+</div>
+</div>
+<div class="space-y-4">
+<h5 class="text-zinc-100 font-bold mb-6">Quick Links</h5>
+<ul class="space-y-3">
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Press Kit</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-zinc-100 font-bold mb-6">Fleet</h5>
+<ul class="space-y-3">
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Apex Series</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Horizon SUV</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Velos Sedan</a></li>
+<li><a class="text-zinc-500 hover:text-zinc-100 transition-colors" href="#">Bespoke Builds</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-zinc-100 font-bold mb-6">Experience</h5>
+<p class="text-zinc-500 normal-case tracking-normal mb-4">Subscribe for early access to reveal events.</p>
+<div class="flex">
+<input class="bg-surface-container-low border-0 px-4 py-2 w-full text-xs" placeholder="EMAIL" type="text"/>
+<button class="bg-primary text-on-primary px-4 py-2"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-10 border-t border-zinc-800/30 flex justify-between items-center">
+<p class="text-[10px] text-zinc-600">© 2025 VELOCITY AUTOMOTIVE. ENGINEERED FOR EXCELLENCE.</p>
+<div class="flex space-x-6 text-[10px] text-zinc-600">
+<span>London</span>
+<span>•</span>
+<span>Tokyo</span>
+<span>•</span>
+<span>Silicon Valley</span>
+</div>
+</div>
+</footer>
+</body></html>

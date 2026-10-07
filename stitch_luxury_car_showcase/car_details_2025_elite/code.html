@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#004f58",
+                        "secondary-fixed": "#e0e0ff",
+                        "primary-fixed-dim": "#00daf3",
+                        "secondary": "#bdc2ff",
+                        "primary-fixed": "#9cf0ff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary": "#00daf3",
+                        "primary-container": "#001f24",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#c7f300",
+                        "on-surface": "#e5e2e1",
+                        "on-primary": "#00363d",
+                        "surface-bright": "#3a3939",
+                        "on-tertiary-fixed": "#171e00",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#006875",
+                        "on-tertiary-fixed-variant": "#3d4d00",
+                        "secondary-container": "#343d96",
+                        "on-secondary-container": "#a8afff",
+                        "on-tertiary": "#293500",
+                        "surface": "#131313",
+                        "outline": "#8e9099",
+                        "outline-variant": "#44474e",
+                        "on-surface-variant": "#c4c6cf",
+                        "error-container": "#93000a",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534",
+                        "error": "#ffb4ab",
+                        "surface-container": "#201f1f",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "on-secondary": "#1b247f",
+                        "on-secondary-fixed": "#000767",
+                        "on-secondary-fixed-variant": "#343d96",
+                        "tertiary": "#aed500",
+                        "tertiary-fixed-dim": "#aed500",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#00daf3",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed-dim": "#bdc2ff",
+                        "on-primary-fixed": "#001f24",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#171e00",
+                        "on-primary-container": "#0091a2",
+                        "on-tertiary-container": "#738e00",
+                        "surface-variant": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-glow-primary {
+            text-shadow: 0 0 15px rgba(0, 218, 243, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/40 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto px-10 py-6">
+<div class="text-2xl font-bold tracking-tighter text-zinc-100 font-headline">VELOCITY</div>
+<div class="hidden md:flex items-center gap-10 font-headline tracking-tight">
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Home</a>
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#">Cars</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Categories</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">About</a>
+<a class="text-zinc-400 hover:text-zinc-100 transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-4 text-zinc-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-zinc-100 transition-all duration-300">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-zinc-100 transition-all duration-300">person</span>
+</div>
+<button class="bg-gradient-to-r from-primary to-on-primary-container text-on-primary px-6 py-2.5 rounded-DEFAULT font-bold uppercase text-xs tracking-widest hover:brightness-110 transition-all duration-300 active:scale-95">
+                    Test Drive
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-end px-10 pb-20 overflow-hidden">
+<div class="absolute inset-0 -z-10">
+<img class="w-full h-full object-cover grayscale-[0.3] brightness-75" data-alt="Sleek electric hypercar parked in a dark minimalist garage with cyan neon strip lighting reflecting on the metallic surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpeH4toR5Rzhvt2ZRF4hEAS_PpWIaAl4GEtTiufN-sJCx_dR-G-RwMHF8Ph8o20vFwqeOk7L94EE4xoxMH1v0fF63mrQlA0GHbZgZHA-vP4CSjQXZe0yfPv-4moAiVCc6sRQPbUD3g7PnjPalu4EZij2qVmhhlko_3NwQZFzZpjygNqIJNHiPq0uBzJS0z1NbzNgWYl1f88qUkOf6qXwAVNL6qbUK4GwRBh9BbnNY3q-4C54jZaeSTra7M3sVx8obDmCR-NdMeXOU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-transparent"></div>
+</div>
+<div class="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+<div class="lg:col-span-8">
+<span class="inline-block px-4 py-1 mb-6 bg-tertiary-container text-tertiary font-label text-xs font-bold tracking-[0.2em] uppercase border border-tertiary/20">
+                        Limited Production
+                    </span>
+<h1 class="font-headline text-7xl md:text-9xl font-extrabold tracking-tighter leading-[0.85] text-on-surface mb-8">
+                        NEON <br/> <span class="text-primary text-glow-primary">SPECTRE</span>
+</h1>
+<p class="max-w-xl text-on-surface-variant text-lg leading-relaxed font-light">
+                        Experience the zenith of electric performance. The 2025 Spectre redefines automotive physics with a triple-motor array delivering instantaneous torque and unmatched aerodynamic efficiency.
+                    </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="bg-surface-container-low/60 backdrop-blur-xl p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-baseline mb-6">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Starting From</span>
+<span class="font-headline text-3xl font-bold text-on-surface">$284,500</span>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-on-primary-container text-on-primary py-5 rounded-lg font-extrabold uppercase tracking-[0.15em] text-sm hover:brightness-110 transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications Grid -->
+<section class="py-32 px-10 bg-surface">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div>
+<h2 class="font-headline text-4xl md:text-6xl font-bold tracking-tight mb-4">Precision <span class="text-on-surface-variant font-light italic">Engineering.</span></h2>
+<p class="text-on-surface-variant max-w-md">Every component of the Spectre is optimized for velocity, weight reduction, and thermal endurance.</p>
+</div>
+<div class="flex gap-4">
+<div class="h-[2px] w-12 bg-primary self-center"></div>
+<span class="font-label text-xs tracking-widest uppercase text-on-surface-variant">Technical Datasheet // 2025</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Spec Card 1 -->
+<div class="group bg-surface-container-low/60 backdrop-blur-lg p-10 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform duration-300" data-icon="speed">speed</span>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Top Velocity</h4>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl font-bold">218</span>
+<span class="font-headline text-lg text-on-surface-variant">MPH</span>
+</div>
+</div>
+<!-- Spec Card 2 -->
+<div class="group bg-surface-container-low/60 backdrop-blur-lg p-10 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform duration-300" data-icon="electric_bolt">electric_bolt</span>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Acceleration</h4>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl font-bold">1.85</span>
+<span class="font-headline text-lg text-on-surface-variant">S (0-60)</span>
+</div>
+</div>
+<!-- Spec Card 3 -->
+<div class="group bg-surface-container-low/60 backdrop-blur-lg p-10 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform duration-300" data-icon="battery_charging_full">battery_charging_full</span>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Max Range</h4>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl font-bold">412</span>
+<span class="font-headline text-lg text-on-surface-variant">MILES</span>
+</div>
+</div>
+<!-- Spec Card 4 -->
+<div class="group bg-surface-container-low/60 backdrop-blur-lg p-10 rounded-xl border border-outline-variant/5 hover:bg-surface-container-high transition-all duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-8 block group-hover:scale-110 transition-transform duration-300" data-icon="settings_input_component">settings_input_component</span>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Peak Power</h4>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl font-bold">1,020</span>
+<span class="font-headline text-lg text-on-surface-variant">BHP</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Feature Section (Asymmetric) -->
+<section class="py-20 px-10 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+<div class="lg:col-span-7 relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<img class="rounded-xl grayscale-[0.2] hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10" data-alt="Close up of a luxury car steering wheel with carbon fiber details and a digital HUD glowing in cyan" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBftDCrru6iez-IsiB8L9YCrQ8zs7uZZ1CCp4uNBgGK8LDb3Wr3qD1zAYhMDMdQRv2V5TQNb6Py1pHzkUyw0KIcHpLplWwvJhqe23EaHX0ivck9GTSkqcsQv746imcmfUhhcAtHkTc_EvAB7FO8PM6GKxJcsbxLM8jrzuFyU-CPJtE05OAq5A4PoNJxOClc3v_X3OiEgcioIk1CP4GXsiCH6xwXF8MIR-mSBu4Qag1gdtQl-bSaJ6AQg50oeaOijs64L4spwmGHtQw"/>
+</div>
+<div class="lg:col-span-5">
+<h3 class="font-headline text-5xl font-bold mb-8 leading-tight">Digital Cockpit <br/><span class="text-primary">Intuition.</span></h3>
+<div class="space-y-10">
+<div class="flex gap-6">
+<div class="mt-1"><span class="material-symbols-outlined text-tertiary" data-icon="hdr_strong">hdr_strong</span></div>
+<div>
+<h5 class="font-headline text-xl font-semibold mb-2">Neural Interface</h5>
+<p class="text-on-surface-variant leading-relaxed">AI-driven climate and seat adjustments that learn your preferences based on biometric feedback.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="mt-1"><span class="material-symbols-outlined text-tertiary" data-icon="spatial_audio">spatial_audio</span></div>
+<div>
+<h5 class="font-headline text-xl font-semibold mb-2">Sonic Immersion</h5>
+<p class="text-on-surface-variant leading-relaxed">24-speaker spatial audio system that isolates road noise while delivering studio-grade clarity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Vehicles -->
+<section class="py-32 px-10 bg-surface-container-lowest">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex items-center justify-between mb-16">
+<h2 class="font-headline text-4xl font-bold tracking-tight">Explore More</h2>
+<a class="text-primary font-label text-xs tracking-widest uppercase flex items-center gap-2 group" href="#">
+                        Full Fleet 
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Related Car 1 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[16/10] overflow-hidden rounded-lg mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Front view of a dark grey high performance sports car in a modern driveway at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu75IBN9UnQH0_HqIzKmxTfPgxe_kajFVBoBTSVfxunswHyXvexxSPEIMuMLhu6VFbJWfCo4PJuelxfJFzz5oWAiCasFiNXLa6RMI8z7EpAAGjaBbKtnxUTCM4K_BDCI3BEeYB62psbky-Tmp0w-fNuq30MMstVTOVCmqYe2dhJI5klYV2fC9Pblc8c7edW52JKl9RQq41cXGt-iW5TMgMxVupIPTsPt2B0r0Zq_h48ux1QxZVkWgRlauP117OmcS6cGKdu4yJr7I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<span class="bg-primary text-on-primary px-4 py-2 text-xs font-bold uppercase tracking-widest">View Specs</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline text-xl font-bold mb-1">APEX GT</h4>
+<p class="text-on-surface-variant text-sm">V12 Hybrid Power</p>
+</div>
+<span class="font-headline font-semibold text-lg">$210,000</span>
+</div>
+</div>
+<!-- Related Car 2 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[16/10] overflow-hidden rounded-lg mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Side profile of a sleek black luxury sedan under studio lights highlighting the smooth curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_aAvD9_O1JiC0f010aymRb9Dedsi9EKN4f3mqAWgzAYJlr7rdav7NfJ5bNosn1kRj1-UF7W2K3EFKvw1Xsp8Q_cWrTTGxG1JM1bBEXtckV0wW-HltSNKA1NWD7o2VisE396XH6UMENHMNqzczlFIBHvBsc0NTEdmcCqHE3E9PgB7XUCce9GCbVD19CCOuVbeZ3CmPN_IzO11d74BjQmLo3G60UWL3OvvhXJxpDledcNJVfj5h9JeOuFK8ggwat38T9nADVi7yIIs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<span class="bg-primary text-on-primary px-4 py-2 text-xs font-bold uppercase tracking-widest">View Specs</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline text-xl font-bold mb-1">OBSIDIAN S</h4>
+<p class="text-on-surface-variant text-sm">Luxury Performance Sedan</p>
+</div>
+<span class="font-headline font-semibold text-lg">$145,000</span>
+</div>
+</div>
+<!-- Related Car 3 -->
+<div class="group cursor-pointer">
+<div class="relative aspect-[16/10] overflow-hidden rounded-lg mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Yellow performance sports car driving on a scenic coastal mountain road with blue ocean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvgWnUmwBtcftuFJ4ZgNZBpZ0zhtpDyADP_KKrviJ_gNGVoi59RSjT47BqPW0JDR1pQuuscHaqKKPgF-zGHz-YkUjzuDapomVd1SQeXfYbvEIastkP-sbjap1G4HnWSWIlQQ7aWFj4A98oQrBjKTxYiQqggXOLnqffVDHajD_TB-yRscwemJ9_0vrDPUJlxypkmnbJi1prAxq8GEbwpBLCg_N-e4Ssbln1t6vVd5MndNTTefZWCn8fJxJGjEu5cPZ0uFLKkG6AKAQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+<span class="bg-primary text-on-primary px-4 py-2 text-xs font-bold uppercase tracking-widest">View Specs</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline text-xl font-bold mb-1">SOLARIS R</h4>
+<p class="text-on-surface-variant text-sm">Track-Ready Lightweight</p>
+</div>
+<span class="font-headline font-semibold text-lg">$192,500</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-zinc-950 w-full py-20 px-10 border-t border-zinc-800/50">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-black text-zinc-100 font-headline">VELOCITY</div>
+<p class="text-zinc-500 font-body text-sm leading-relaxed max-w-xs">Defining the future of luxury automotive performance through innovation, electric power, and precision engineering.</p>
+</div>
+<div class="space-y-4">
+<h6 class="text-cyan-400 font-headline text-sm font-bold uppercase tracking-widest">Fleet</h6>
+<ul class="space-y-2 text-zinc-500 font-body text-sm">
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Electric Hypercars</li>
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Luxury Sedans</li>
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Performance SUVs</li>
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Concept Series</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h6 class="text-cyan-400 font-headline text-sm font-bold uppercase tracking-widest">Company</h6>
+<ul class="space-y-2 text-zinc-500 font-body text-sm">
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Sustainability</li>
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Press Kit</li>
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Privacy Policy</li>
+<li class="hover:text-zinc-100 transition-colors cursor-pointer">Terms of Service</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h6 class="text-cyan-400 font-headline text-sm font-bold uppercase tracking-widest">Newsletter</h6>
+<p class="text-zinc-500 text-sm mb-4">Stay updated with exclusive releases.</p>
+<div class="flex">
+<input class="bg-zinc-900 border-none text-zinc-100 px-4 py-2 w-full focus:ring-1 focus:ring-cyan-400 rounded-l-DEFAULT text-sm" placeholder="Email Address" type="email"/>
+<button class="bg-cyan-400 text-zinc-950 px-4 py-2 rounded-r-DEFAULT font-bold text-xs uppercase tracking-tighter">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-zinc-800/30 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-zinc-500 font-['Manrope'] text-xs tracking-wide uppercase">
+                © 2025 VELOCITY AUTOMOTIVE. ENGINEERED FOR EXCELLENCE.
+            </div>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-zinc-500 hover:text-cyan-400 cursor-pointer transition-colors" data-icon="public">public</span>
+<span class="material-symbols-outlined text-zinc-500 hover:text-cyan-400 cursor-pointer transition-colors" data-icon="share">share</span>
+<span class="material-symbols-outlined text-zinc-500 hover:text-cyan-400 cursor-pointer transition-colors" data-icon="verified">verified</span>
+</div>
+</div>
+</footer>
+</body></html>
