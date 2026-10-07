@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stitch Luxury Car Showcase</title>
+    <style>
+      :root {
+        --bg: #0b0b0d;
+        --panel: #14181d;
+        --panel-2: #1a212b;
+        --text: #edf3ff;
+        --muted: #b4c0d3;
+        --accent: #00daf3;
+        --accent-2: #aed500;
+        --line: rgba(255,255,255,0.08);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(0, 218, 243, 0.15), transparent 35%),
+          linear-gradient(180deg, var(--bg), #0f1116 100%);
+        color: var(--text);
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid rgba(0, 218, 243, 0.35);
+        background: rgba(0, 218, 243, 0.08);
+        border-radius: 999px;
+        color: var(--accent);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 24px 0 18px;
+        font-size: clamp(2.8rem, 5vw, 5rem);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+      }
+
+      .subtitle {
+        max-width: 720px;
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 218, 243, 0.4);
+      }
+
+      .card h2 {
+        margin: 0 0 12px;
+        font-size: 1.45rem;
+      }
+
+      .card p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .card a {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(90deg, var(--accent), #197d8d);
+        color: #02191d;
+        font-weight: 700;
+        padding: 12px 18px;
+        border-radius: 12px;
+      }
+
+      .footer {
+        margin-top: 50px;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <span class="badge">Luxury Auto Showcase</span>
+      <h1>Stitch Luxury Car Showcase</h1>
+      <p class="subtitle">
+        Premium automotive landing page concepts built for a dark, futuristic, luxury brand aesthetic.
+        Explore the available design directions below.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Homepage — Drive the Future</h2>
+          <p>High-impact hero layout with neon accents, premium typography, and futuristic electric performance styling.</p>
+          <a href="./stitch_luxury_car_showcase/homepage_drive_the_future/code.html">Open Page</a>
+        </div>
+
+        <div class="card">
+          <h2>Vehicle Detail — 2025 Elite</h2>
+          <p>Luxury spec-driven landing page focused on product elegance, performance details, and premium visual hierarchy.</p>
+          <a href="./stitch_luxury_car_showcase/car_details_2025_elite/code.html">Open Page</a>
+        </div>
+      </div>
+
+      <div class="footer">
+        Design system reference: <a href="./stitch_luxury_car_showcase/aether_carbon/DESIGN.md" style="color: var(--accent);">Aether Carbon Design</a>
+      </div>
+    </div>
+  </body>
+</html>
